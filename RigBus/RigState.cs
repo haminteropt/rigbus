@@ -6,6 +6,7 @@ namespace RigBus
 {
     public class RigState
     {
+        public int RigId { get; set; }
         public int Freq { get; set; }
         public int FreqA { get; set; }
         public int FreqB { get; set; }

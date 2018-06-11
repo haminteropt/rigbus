@@ -19,9 +19,11 @@ namespace DummyRigBus.RestRig
 
         public void PopulateRigs(int numberOfRigs)
         {
-            while (RigList.Count != numberOfRigs)
+            for(int i=0;i<numberOfRigs;i++)
             {
-                RigList.Add(new RigState());
+                var rigState = new RigState();
+                rigState.RigId = i;
+                RigList.Add(rigState);
             }
         }
 
