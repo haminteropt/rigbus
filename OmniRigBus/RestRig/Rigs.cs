@@ -17,16 +17,16 @@ namespace DummyRigBus.RestRig
             RigList = new List<RigState>();
         }
 
-        public void PopulateRigs()
+        public void PopulateRigs(int numberOfRigs)
         {
-            if (RigList.Count != 0) return;
-            RigList.Add(new RigState());
-            RigList.Add(new RigState());
+            while (RigList.Count != numberOfRigs)
+            {
+                RigList.Add(new RigState());
+            }
         }
 
         public static Rigs Instance
         {
-
             get
             {
                 if (instance == null)

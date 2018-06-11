@@ -37,9 +37,7 @@ namespace DummyRigBus
         private Rigs rigState = Rigs.Instance;
 
         private DummyRig()
-        {
-
-            
+        {     
         }
         private void ParamsChangeEvent(int RigNumber, int Params)
         {
@@ -51,9 +49,8 @@ namespace DummyRigBus
 
         public RigState GetRigState(int rigNum)
         {
-
             var rigs = Rigs.Instance;
-            rigs.PopulateRigs();
+            rigs.PopulateRigs(2);
             return rigs.RigList[rigNum];
         }
 
@@ -68,17 +65,13 @@ namespace DummyRigBus
         public void setFreq(int v, int freq)
         {
             Console.WriteLine("setting rig: {0} to {1}", v, freq);
-
         }
 
         public void SetRigState(int rigNum, RigState state)
         {
-
             setFreq(rigNum, state.Freq);
             setFreqA(rigNum, state.FreqA);
             setFreqB(rigNum, state.FreqB);
-
-
         }
 
         public void setRigState(int rigId, RigState state)
