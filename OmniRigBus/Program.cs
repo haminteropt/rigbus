@@ -23,9 +23,9 @@ namespace DummyRigBus
                         s.WhenStarted(a => a.Start());
                         s.WhenStopped(a => a.Stop());
                     });
-                    c.SetServiceName("OmniRigHamBus");
-                    c.SetDisplayName("OmniRig HamBus server");
-                    c.SetDescription("Web server for OmniRig and hambus");
+                    c.SetServiceName("DummyRigHamBus");
+                    c.SetDisplayName("DummyRig HamBus server");
+                    c.SetDescription("Web server for DummyRig and hambus");
                 });
                 return (int)exitCode;
             }
