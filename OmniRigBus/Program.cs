@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Topshelf;
 using Topshelf.ServiceConfigurators;
 
-namespace OmniRigBus
+namespace DummyRigBus
 {
     class Program
     {
@@ -16,10 +16,10 @@ namespace OmniRigBus
             try {
                 var exitCode = HostFactory.Run(c =>
                 {
-                    c.Service<OmniRigService>(service =>
+                    c.Service<DummyRigService>(service =>
                     {
-                        ServiceConfigurator<OmniRigService> s = service;
-                        s.ConstructUsing(() => new OmniRigService());
+                        ServiceConfigurator<DummyRigService> s = service;
+                        s.ConstructUsing(() => new DummyRigService());
                         s.WhenStarted(a => a.Start());
                         s.WhenStopped(a => a.Stop());
                     });

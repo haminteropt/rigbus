@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniRigBus.RestRig
+namespace DummyRigBus.RestRig
 {
     public class Rigs
     {

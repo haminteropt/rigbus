@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OmniRigBus
+namespace DummyRigBus
 {
-    public class OmniRigService
+    public class DummyRigService
     {
         private IDisposable app;
         public void Start()
         {
-            app = WebApp.Start("http://localhost:7301/");
+            string baseAddress = "http://localhost:7302/";
+            app = WebApp.Start<Startup>(url: baseAddress);
         }
         public void Stop()
         {

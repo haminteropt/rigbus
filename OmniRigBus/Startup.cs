@@ -5,21 +5,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace OmniRigBus
+namespace DummyRigBus
 {
-    class Startup
+    public class Startup
     {
-        private ORig rig;
+        private DummyRig rig;
         public void Configuration(IAppBuilder app)
         {
             app.UseCors(CorsOptions.AllowAll);
-            rig = ORig.Instance;
+            rig = DummyRig.Instance;
             // Configure Web API for self-host. 
             var config = new HttpConfiguration();
-            config.EnableSwagger(c => c.SingleApiVersion("v1", "OmniRigBus Control OmniRig via RigBus")).
+
+            config.EnableSwagger(c => c.SingleApiVersion("v1", "Dummy rig controlled by RigBus")).
             EnableSwaggerUi();
 
             config.MapHttpAttributeRoutes();

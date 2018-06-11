@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
-using OmniRigBus.RestRig;
+using DummyRigBus.RestRig;
 using RigBus;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Web.Http;
 
-namespace OmniRigBus.Controller
+namespace DummyRigBus.Controller
 {
     public class Freq
     {
@@ -19,12 +19,12 @@ namespace OmniRigBus.Controller
         public string mode { get; set; }
     }
     //[RoutePrefix("v1/RigBus/Rigs")]
-    public class OmniRigController : ApiController
+    public class DummyRigController : ApiController
     {
         private Rigs rigs = Rigs.Instance;
-        private ORig oRig = ORig.Instance;
+        private DummyRig oRig = DummyRig.Instance;
 
-        public OmniRigController()
+        public DummyRigController()
         {
 
         }
