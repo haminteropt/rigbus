@@ -9,7 +9,7 @@ using Topshelf.ServiceConfigurators;
 
 namespace DummyRigBus
 {
-    class Program
+    public class Program
     {
         static int Main(string[] args)
         {

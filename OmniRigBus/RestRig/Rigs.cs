@@ -15,7 +15,6 @@ namespace DummyRigBus.RestRig
         private Rigs()
         {
             RigList = new List<RigState>();
-
         }
 
         public void PopulateRigs()

@@ -120,6 +120,56 @@ namespace DummyRigBus
             throw new NotImplementedException();
         }
 
+        public RigState getRigState(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string getMode(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getFreq(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getFreqA(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getFreqB(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getPitch(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getRit(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int getRitOffset(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string getVfo(int rigId, string freq)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string get(int rigId)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DummyRig Instance
         {
             get
