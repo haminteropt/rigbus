@@ -43,18 +43,17 @@ namespace DummyRigBus
         {
             if (RigNumber != 1 && RigNumber != 2) return;
             Console.WriteLine(String.Format("Param: {0}", Params));
-            RigState rigState = GetRigState(RigNumber);
+            RigState rigState = GetRigState();
             var json = JsonConvert.SerializeObject(rigState);
         }
 
-        public RigState GetRigState(int rigNum)
+        public RigState GetRigState()
         {
             var rigs = Rigs.Instance;
-            rigs.PopulateRigs(2);
-            return rigs.RigList[rigNum];
+            return rigs.rigState;
         }
 
-        public void setMode(int rigId, string mode)
+        public void setMode(string mode)
         {
             mode = mode.ToUpper();
 
@@ -62,103 +61,103 @@ namespace DummyRigBus
                 ;
         }
 
-        public void setFreq(int v, int freq)
+        public void setFreq(int freq)
         {
-            Console.WriteLine("setting rig: {0} to {1}", v, freq);
+            Console.WriteLine("setting rig: {0}",  freq);
         }
 
-        public void SetRigState(int rigNum, RigState state)
+        public void SetRigState(RigState state)
         {
-            setFreq(rigNum, state.Freq);
-            setFreqA(rigNum, state.FreqA);
-            setFreqB(rigNum, state.FreqB);
+            setFreq(state.Freq);
+            setFreqA(state.FreqA);
+            setFreqB(state.FreqB);
         }
 
-        public void setRigState(int rigId, RigState state)
+        public void setRigState(RigState state)
         {
             throw new NotImplementedException();
         }
 
-        public void setFreqA(int rigId, int freq)
+        public void setFreqA(int freq)
         {
 
         }
 
-        public void setFreqB(int rigId, int freq)
+        public void setFreqB(int freq)
         {
 
         }
 
-        public void setPitch(int rigId, int pitch)
+        public void setPitch(int pitch)
         {
 
         }
 
-        public void setRit(int rigId, string rit)
+        public void setRit(string rit)
         {
         }
 
-        public void setRitOffset(int rigId, int ritOffset)
+        public void setRitOffset(int ritOffset)
         {
 
         }
         // todo
-        public void setVfo(int rigId, string split)
+        public void setVfo(string split)
         {
 
         }
 
-        public void set(int rigId, string xit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public RigState getRigState(int rigId)
+        public void set(string xit)
         {
             throw new NotImplementedException();
         }
 
-        public string getMode(int rigId)
+        public RigState getRigState()
         {
             throw new NotImplementedException();
         }
 
-        public int getFreq(int rigId)
+        public string getMode()
         {
             throw new NotImplementedException();
         }
 
-        public int getFreqA(int rigId)
+        public int getFreq()
         {
             throw new NotImplementedException();
         }
 
-        public int getFreqB(int rigId)
+        public int getFreqA()
         {
             throw new NotImplementedException();
         }
 
-        public int getPitch(int rigId)
+        public int getFreqB()
         {
             throw new NotImplementedException();
         }
 
-        public int getRit(int rigId)
+        public int getPitch()
         {
             throw new NotImplementedException();
         }
 
-        public int getRitOffset(int rigId)
+        public int getRit()
         {
             throw new NotImplementedException();
         }
 
-        public string getVfo(int rigId, string freq)
+        public int getRitOffset()
         {
             throw new NotImplementedException();
         }
 
-        public string get(int rigId)
+        public string getVfo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string get()
         {
             throw new NotImplementedException();
         }

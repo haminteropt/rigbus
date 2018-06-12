@@ -12,21 +12,27 @@ namespace DummyRigBus.RestRig
         public List<RigState> RigList { get; private set; }
 
         private static Rigs instance = null;
+        public RigState rigState = new RigState();
         private Rigs()
         {
-            RigList = new List<RigState>();
-        }
 
-        public void PopulateRigs(int numberOfRigs)
+        }
+        public void populateRig()
         {
-            for(int i=0;i<numberOfRigs;i++)
-            {
-                var rigState = new RigState();
-                rigState.RigId = i;
-                RigList.Add(rigState);
-            }
+            rigState.Freq = 14300000;
+            rigState.FreqA = 14300000;
+            rigState.FreqB = 14300000;
+            rigState.Mode = "USB";
+            rigState.RigType = "Dummy";
+            rigState.Rit = "VFOAA";
+            rigState.RitOffset = 0;
+            rigState.Status = "";
+            rigState.StatusStr = "";
+            rigState.Split = "VFOAA";
+            rigState.Tx = "VFOAA";
+            rigState.Vfo = "VFOAA";
+            rigState.Xit = "VFOAA";
         }
-
         public static Rigs Instance
         {
             get

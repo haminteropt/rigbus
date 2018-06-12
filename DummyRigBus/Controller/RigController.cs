@@ -22,7 +22,7 @@ namespace DummyRigBus.Controller
     public class DummyRigController : ApiController
     {
         private Rigs rigs = Rigs.Instance;
-        private DummyRig oRig = DummyRig.Instance;
+        private DummyRig dummyRig = DummyRig.Instance;
 
         public DummyRigController()
         {
@@ -30,24 +30,10 @@ namespace DummyRigBus.Controller
         }
         // GET api/rig 
         [Route("api/RigBus/V1/RigsInfo")]
-        public Rigs Get()
+        public RigState Get()
         {
-            oRig.GetRigState(0);
-            oRig.GetRigState(1);
-            return rigs;
-        }
-
-        // GET api/rig/5 
-        [Route("api/RigBus/V1/RigsInfo/{id:int}")]
-        public RigState Get(int id)
-        {
-
-            
-            if (id != 1 && id != 2)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            id--;
-            oRig.GetRigState(id);
-            return rigs.RigList[id];
+            dummyRig.GetRigState();
+            return rigs.rigState;
         }
 
 
@@ -57,7 +43,7 @@ namespace DummyRigBus.Controller
             if (value.rigId != 1 && value.rigId != 2)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             Console.WriteLine("rig {0} freq value: {1}",value.rigId, value.freq);
-            oRig.setFreq(value.rigId - 1, value.freq);
+            dummyRig.setFreq(value.freq);
         }
 
         [Route("api/RigBus/V1/mode")]
@@ -66,12 +52,12 @@ namespace DummyRigBus.Controller
             if (value.rigId != 1 && value.rigId != 2)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             Console.WriteLine("rig {0} freq value: {1}", value.rigId, value.mode);
-            oRig.setMode(value.rigId - 1, value.mode);
+            dummyRig.setMode(value.mode);
         }
-        [Route("api/RigBus/V1/setRig/{id:int}")]
+        [Route("api/RigBus/V1/setRig")]
         public void Put(int id, [FromBody]RigState value)
         {
-            oRig.SetRigState(id - 1, value);
+            dummyRig.SetRigState(value);
         }
 
     }
